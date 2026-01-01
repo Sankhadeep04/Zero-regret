@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Big bang salad bowl",
+    "category": ["salad", "bowl"],
+    "rating": "4.9",
+    "description": "Whole wheat tortilla, grilled chicken breast, olive oil, lettuce leaves, tomato slices, cucumber slices, onion slices, Greek yogurt, garlic, black pepper.",
+    "price": "₹480",
+    "originalPrice": "₹600",
+    "image": "assets/SALAD 2.png",
+    "nutrition": {
+      "calories": "500",
+      "carbs": "60",
+      "protein": "30",
+      "fats": "20"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ultimate chicken wrap",
+    "category": "special",
+    "rating": "4.9",
+    "description": "Whole wheat tortilla, grilled chicken breast, olive oil, lettuce leaves, tomato slices, cucumber slices, onion slices, Greek yogurt, garlic, black pepper.",
+    "price": "₹480",
+    "originalPrice": "₹600",
+    "image": "assets/chicken-wrap-2.png",
+    "nutrition": {
+      "calories": "2000",
+      "carbs": "80",
+      "protein": "50",
+      "fats": "25"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Chicken and rice bowl",
+    "category": "bowl",
+    "rating": "4.9",
+    "description": "cooked brown rice, grilled chicken breast, olive oil, mixed sautéed vegetables (bell peppers, carrots, beans), onion, garlic, cumin seeds, Greek yogurt (for raita), cucumber (for raita), black pepper and salt.",
+    "price": "₹420",
+    "originalPrice": "₹650",
+    "image": "assets/rice-chicken-bowl-2.png",
+    "nutrition": {
+      "calories": "2560",
+      "carbs": "80",
+      "protein": "50",
+      "fats": "25"
+    }
+  }
+]

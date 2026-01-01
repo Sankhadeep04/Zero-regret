@@ -1,0 +1,6 @@
+website updates
+mrp to discount price
+font 
+photo 
+nutrition pop up
+fetch data from json

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero regret</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <button class="nav-btn" id="menuBtn">
+                <svg viewBox="0 0 24 24">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="nav-center">
+            <img src="assets/logo-2.png" class="logo" id="logoBtn">
+            <!-- <div class="logo" id="logoBtn">☕</div> -->
+        </div>
+
+        <div class="nav-right">
+            <button class="nav-btn" id="searchBtn">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <!-- <button class="nav-btn" id="cartBtn">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-badge">3</span>
+            </button> -->
+        </div>
+    </nav>
+
+    <!-- Search Container -->
+    <div class="search-container" id="searchContainer">
+        <input type="text" class="search-input" placeholder="Search for coffee, meals, pastries...">
+        <button class="search-close" id="searchCloseBtn">×</button>
+    </div>
+
+    <!-- Left Sidebar (Menu) -->
+    <div class="sidebar sidebar-left" id="menuSidebar">
+        <a href="#home" class="menu-item">Home</a>
+        <a href="#meals" class="menu-item">Meals</a>
+        <a href="#subscriptions" class="menu-item">Subscriptions</a>
+        <a href="#about" class="menu-item">About</a>
+        <a href="#contact" class="menu-item">Contact</a>
+    </div>
+
+    <!-- Right Sidebar (Cart) -->
+    <!-- <div class="sidebar sidebar-right" id="cartSidebar">
+        <h2 class="cart-header">Your Cart</h2>
+        <div class="cart-item">
+            <div class="cart-item-name">Espresso</div>
+            <div class="cart-item-price">₹120</div>
+        </div>
+        <div class="cart-item">
+            <div class="cart-item-name">Croissant</div>
+            <div class="cart-item-price">₹80</div>
+        </div>
+        <div class="cart-item">
+            <div class="cart-item-name">Green Tea</div>
+            <div class="cart-item-price">₹60</div>
+        </div>
+        <div class="cart-total">Total: ₹260</div>
+    </div> -->
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                The Delicious<br>
+                Way to Eat<br>
+                <span class="italic">Healthy</span>.
+            </h1>
+            <p class="hero-subtitle">CONVENIENT, HEALTHY, AND DELICIOUS<br>MEAL PREP DELIVERED TO YOUR DOOR.</p>
+            <!-- <button class="cta-button">Get Started</button> -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Our Philosophy</h2>
+            <p>At Zero-regret, we believe that healthy eating should never compromise on flavor or elegance. Every dish
+                is crafted with organic, locally-sourced ingredients that nourish both body and soul.</p>
+            <p>Our culinary team combines nutritional science with culinary artistry to create meals that are as
+                beautiful as they are beneficial. We're not just serving food; we're serving wellness on a plate.</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Organic</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0</h3>
+                    <p>Preservatives</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Fresh</h3>
+                    <p>Daily</p>
+                </div>
+
+                <div class="stat-item">
+                    <h3>Gluten-Free</h3>
+                    <p>Healthy, Gluten-Free Options</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="Fresh Ingredients">
+        </div> -->
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <!-- <h2>Signature Meals</h2> -->
+        <div class="menu-header">
+            <h2>Our Popular <span class="highlight">Menu</span></h2>
+            <p class="menu-subtitle">Discover our best-selling salads,bowls,sandwiches and drinks crafted with the
+                freshest ingredients<br>and balanced flavors to keep you healthy and satisfied.</p>
+        </div>
+
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="salad">Salads</button>
+            <button class="filter-btn" data-filter="bowl">Bowls</button>
+            <button class="filter-btn" data-filter="smoothie">Smoothies</button>
+            <button class="filter-btn" data-filter="special">Chef's Special</button>
+        </div>
+
+        <div class="menu-cards-grid" id="menuCardsGrid">
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Meal Plans Section -->
+    <section class="meal-plans" id="plans">
+        <h2>Meal Plans</h2>
+        <p class="section-subtitle">Choose the perfect plan for your lifestyle</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>Daily Fresh</h3>
+                <p class="plan-price">₹499<span>/day</span></p>
+                <ul class="plan-features">
+                    <li>✓ 2 Meals per day</li>
+                    <li>✓ Fresh delivery daily</li>
+                    <li>✓ Customizable options</li>
+                    <li>✓ No commitment</li>
+                </ul>
+                <button class="plan-btn">Choose Plan</button>
+            </div>
+            <div class="plan-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Weekly Wellness</h3>
+                <p class="plan-price">₹2,999<span>/week</span></p>
+                <ul class="plan-features">
+                    <li>✓ 3 Meals per day</li>
+                    <li>✓ Fresh delivery daily</li>
+                    <li>✓ Nutrition consultation</li>
+                    <li>✓ Free smoothie daily</li>
+                </ul>
+                <button class="plan-btn">Choose Plan</button>
+            </div>
+            <div class="plan-card">
+                <h3>Monthly Master</h3>
+                <p class="plan-price">₹9,999<span>/month</span></p>
+                <ul class="plan-features">
+                    <li>✓ 3 Meals + 2 snacks</li>
+                    <li>✓ Premium ingredients</li>
+                    <li>✓ Personal nutritionist</li>
+                    <li>✓ Best value</li>
+                </ul>
+                <button class="plan-btn">Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you. Visit us or send us a message!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>123 Health Street<br>Kolkata, West Bengal 700001</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Hours</h4>
+                        <p>Mon - Fri: 7am - 9pm<br>Sat - Sun: 8am - 8pm</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Contact</h4>
+                        <p>Phone: +91 98765 43210<br>Email: hello@zero-regret.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" class="form-input">
+                <input type="email" placeholder="Your Email" class="form-input">
+                <textarea placeholder="Your Message" class="form-textarea" rows="5"></textarea>
+                <button class="submit-btn">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+
+                <img src="assets/logo-2.png" class="logo-img-tail">
+            </div>
+            <p>&copy; 2024 Zero regret Cafe. Cultivating Wellness, One Meal at a Time.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+    <div class="nutrition-overlay" id="nutritionOverlay">
+        <div class="nutrition-popup">
+            <button class="close-nutrition" id="closeNutrition">×</button>
+            <h3 class="nutrition-info">Nutritional Information</h3>
+            <div class="nutrition-grid">
+                <div class="nutrition-item calories">
+                    <div class="nutrition-icon">
+                        <img src="assets/fire.png" alt="Calories">
+                    </div>
+                    <div class="nutrition-value" id="caloriesValue">500kcal</div>
+                    <div class="nutrition-label">Calories</div>
+                </div>
+
+                <div class="nutrition-item carbs">
+                    <div class="nutrition-icon">
+                        <img src="assets/carb.png" alt="Calories">
+                    </div>
+                    <div class="nutrition-value" id="carbsValue">60gm</div>
+                    <div class="nutrition-label">Carbs</div>
+                </div>
+
+                <div class="nutrition-item protein">
+                    <div class="nutrition-icon">
+                        <img src="assets/leg-piece.png" alt="Calories">
+                    </div>
+                    <div class="nutrition-value" id="proteinValue">30g</div>
+                    <div class="nutrition-label">Protein</div>
+                </div>
+
+                <div class="nutrition-item fats">
+                    <div class="nutrition-icon">
+                        <img src="assets/olive-oil.png" alt="Calories">
+                    </div>
+                    <div class="nutrition-value" id="fatsValue">20g</div>
+                    <div class="nutrition-label">Fats</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-lightbox" id="imageLightbox">
+        <div class="lightbox-content">
+            <img src="" id="lightboxImg" alt="Food Preview">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
