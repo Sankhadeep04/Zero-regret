@@ -842,24 +842,24 @@ h1, h2, h3 {
 }
 
 .stat-item:nth-child(1):hover {
-    transform: rotate(-15deg) translateY(-1px);
+    /* transform: rotate(-15deg) translateY(-1px); */
     border-color: #00FF08;
     box-shadow: 0 10px 30px rgba(0, 255, 8, 0.3);
 }
 
 .stat-item:nth-child(2):hover {
-    transform: rotate(15deg) translateY(-10px);
+    /* transform: rotate(15deg) translateY(-10px); */
     border-color: #00FF08;
     box-shadow: 0 10px 30px rgba(0, 255, 8, 0.3);
 }
 
 .stat-item:nth-child(3):hover {
-    transform: rotate(-5deg) translateY(-10px);
+    /* transform: rotate(-5deg) translateY(-10px); */
     border-color: #00FF08;
     box-shadow: 0 10px 30px rgba(0, 255, 8, 0.3);
 }
 .stat-item:nth-child(4):hover {
-    transform: rotate(-5deg) translateY(-10px);
+    /* transform: rotate(-5deg) translateY(-10px); */
     border-color: #00FF08;
     box-shadow: 0 10px 30px rgba(0, 255, 8, 0.3);
 }
