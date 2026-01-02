@@ -1099,12 +1099,12 @@ h1, h2, h3 {
     min-height: 480px; 
 }
 
-/* .menu-card:hover {
-    transform: translateY(-15px) rotateX(5deg);
+.menu-card:hover {
+    transform: translateY(-15px) ;
     box-shadow: 0 25px 70px rgba(112, 119, 114, 0.686);
-} */
+}
 .menu-card:hover:not(:has(button:hover)) {
-    transform: translateY(-15px) rotateX(5deg);
+    transform: translateY(-15px) ;
     box-shadow: 0 25px 70px rgba(112, 119, 114, 0.686);
 }
 /* 3D Floating Image Wrapper */
@@ -1791,7 +1791,10 @@ footer {
     border-radius: 30px;
     font-size: 0.95rem;
     font-weight: 600;
-    z-index: 5; 
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+    cursor: pointer !important; 
     transition: all 0.3s ease;
     white-space: nowrap;
 }
