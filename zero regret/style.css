@@ -1146,6 +1146,8 @@ h1, h2, h3 {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
     z-index: 2;
+    content-visibility: auto;
+    will-change: transform;
 }
 
 .menu-card:hover .card-food-img {
@@ -1292,6 +1294,9 @@ h1, h2, h3 {
 /* Responsive for Menu Cards */
 /* Fix Mobile Card Spacing - Prevent Overlapping */
 @media (max-width: 768px) {
+    .menu-card:hover {
+        transform: translateY(-10px); /* Less movement */
+    }
     .menu {
         padding: 6rem 1.5rem 4rem;
     }
@@ -1310,6 +1315,7 @@ h1, h2, h3 {
         padding-top: 8rem; /* More top padding */
     }
     .menu-card {
+        transition: transform 0.2s ease;
         margin: 0 auto;
         min-height: 380px; /* Smaller on mobile */
     }
@@ -1502,7 +1508,7 @@ h1, h2, h3 {
 /* Contact Section */
 .contact {
     padding: 6rem 3rem;
-    background: linear-gradient(135deg, #001a00 0%, #000000 100%);
+    background: #000c00;
 }
 
 .contact-container {
@@ -1560,7 +1566,8 @@ h1, h2, h3 {
     border-radius: 12px;
     color: #ffffff;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.2s ease; /* Simplified transition */
+    will-change: border-color; /* Hint to browser */
 }
 
 .form-input:focus,
@@ -1584,7 +1591,8 @@ h1, h2, h3 {
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    will-change:transform;
 }
 
 .submit-btn:hover {
@@ -1593,12 +1601,26 @@ h1, h2, h3 {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 255, 8, 0.3);
 }
-
+@media (max-width: 768px) {
+    .contact {
+        padding: 4rem 1.5rem;
+        background: #000000; /* Flat color on mobile */
+    }
+    
+    .submit-btn:hover {
+        transform: none; /* Disable transform on mobile */
+    }
+    
+    .social-links a:hover {
+        transform: none; /* Disable transform on mobile */
+    }
+}
 /* Footer */
 footer {
     background: #000000;
     padding: 3rem;
     border-top: 2px solid #007504;
+    will-change: auto;
 }
 
 .footer-content {
@@ -1637,14 +1659,18 @@ footer {
     color: #00FF08;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
     color: #007504;
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 }
-
+.contact-container,
+.footer-content {
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+}
 /* Animations */
 @keyframes fadeInUp {
     from {

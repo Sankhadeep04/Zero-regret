@@ -35,7 +35,7 @@ async function loadDynamicMenu() {
         grid.innerHTML = menuData.map(item => `
             <div class="menu-card" data-category="${Array.isArray(item.category) ? item.category.join(' ') : item.category}">
                 <div class="card-image-wrapper">
-                    <img src="${item.image}" alt="${item.name}" class="card-food-img">
+                    <img src="${item.image}" alt="${item.name}" class="card-food-img"  loading="lazy">
                 </div>
                 <div class="card-content">
                     <div class="card-header">
@@ -241,18 +241,16 @@ document.querySelectorAll('.menu-item').forEach(item => {
 // ============================================
 let lastScrollTop = 0;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', debounce(function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (scrollTop > lastScrollTop) {
-        // Scrolling Down - Hide Navbar
         navbar.style.top = "-80px"; 
     } else {
-        // Scrolling Up - Show Navbar
         navbar.style.top = "0";
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-});
+}, 15), { passive: true }); // passive flag improves scroll performance
 
 // 4. RESET TO TOP ON REFRESH
 window.onbeforeunload = function () {
@@ -337,7 +335,7 @@ submitBtn?.addEventListener('click', (e) => {
     formInputs[0].value = '';
     formInputs[1].value = '';
     formTextarea.value = '';
-});
+},{passive: true});
 
 // ============================================
 // NOTIFICATION SYSTEM
@@ -443,3 +441,10 @@ navLogo
 Old sidebar logic from previous layout – not used anymore.
 Kept here for reference only.
 */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), wait);
+    };
+}
